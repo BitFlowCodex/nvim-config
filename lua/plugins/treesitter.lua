@@ -3,59 +3,8 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		build = ":TSUpdate",
-		config = function()
-			local ts = require("nvim-treesitter")
-			ts.setup({
-				ensure_installed = {
-					"css",
-					"php",
-					"json",
-					"java",
-					"go",
-					"ruby",
-					"cpp",
-					"rust",
-					"kotlin",
-					"elixir",
-					"dart",
-					"clojure",
-					"graphql",
-					"make",
-					"cmake",
-					"yaml",
-					"tsx",
-					"jsx",
-					"python",
-					"javascript",
-					"typescript",
-					"regex",
-					"terraform",
-					"sql",
-					"dockerfile",
-					"gitignore",
-					"bash",
-					"c",
-					"diff",
-					"html",
-					"lua",
-					"luadoc",
-					"markdown",
-					"markdown_inline",
-					"query",
-					"vim",
-					"vimdoc",
-				},
-				highlight = { enable = true },
-				indent = { enable = true },
-				fold = {
-					enable = true,
-					method = "expr",
-					expr = "nvim_treesitter#foldexpr()",
-				},
-			})
-
-			-- install parsers (async)
-			ts.install({
+		opts = {
+			ensure_installed = {
 				"css",
 				"php",
 				"json",
@@ -93,7 +42,10 @@ return {
 				"query",
 				"vim",
 				"vimdoc",
-			})
-		end,
+			},
+			auto_install = true,
+			highlight = { enable = true },
+			indent = { enable = true },
+		},
 	},
 }

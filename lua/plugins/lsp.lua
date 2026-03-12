@@ -64,7 +64,6 @@ return {
 			jsonls = {},
 			yamlls = {},
 			clangd = {},
-			gopls = {},
 			pyright = {},
 			ts_ls = {},
 			stylua = {},
