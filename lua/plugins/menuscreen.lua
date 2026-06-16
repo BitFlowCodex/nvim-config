@@ -6,12 +6,12 @@ return {
 		local dashboard = require("alpha.themes.dashboard")
 
 		dashboard.section.header.val = {
-			"      ██╗ █████╗  ██████╗██╗  ██╗",
-			"      ██║██╔══██╗██╔════╝██║ ██╔╝",
-			"      ██║███████║██║     █████╔╝ ",
-			" ██   ██║██╔══██║██║     ██╔═██╗ ",
-			" ╚█████╔╝██║  ██║╚██████╗██║  ██╗",
-			"  ╚════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝",
+			" ██╗   ██╗ ██████╗ ██╗   ██╗██████╗ ███╗   ██╗ █████╗ ███╗   ███╗███████╗",
+			" ╚██╗ ██╔╝██╔═══██╗██║   ██║██╔══██╗████╗  ██║██╔══██╗████╗ ████║██╔════╝",
+			"  ╚████╔╝ ██║   ██║██║   ██║██████╔╝██╔██╗ ██║███████║██╔████╔██║█████╗  ",
+			"   ╚██╔╝  ██║   ██║██║   ██║██╔══██╗██║╚██╗██║██╔══██║██║╚██╔╝██║██╔══╝  ",
+			"    ██║   ╚██████╔╝╚██████╔╝██║  ██║██║ ╚████║██║  ██║██║ ╚═╝ ██║███████╗",
+			"    ╚═╝    ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝",
 		}
 
 		dashboard.section.header.opts.hl = "AlphaHeader"
@@ -22,11 +22,11 @@ return {
 		})
 
 		dashboard.section.buttons.val = {
-			dashboard.button("n", "  New file", ":e %:h/filename"),
+			dashboard.button("n", "  New file", ":enew<CR>"),
 			dashboard.button("f", "  Find File", ":Telescope find_files<CR>"),
-			dashboard.button("t", "󱎸  Find Text", ":Telescope live_grep<CR>"),
-			dashboard.button("p", "  Projects", ":Telescope projects<CR>"),
 			dashboard.button("r", "  Recent Files", ":Telescope oldfiles<CR>"),
+			dashboard.button("t", "󱎸  Find Text", ":Telescope live_grep<CR>"),
+			dashboard.button("p", "  Open Project", ":Ex<CR>"),
 			dashboard.button("q", "󰩈  Quit", ":qa<CR>"),
 		}
 

@@ -5,8 +5,8 @@ vim.g.maplocalleader = " "
 -- Obviously, we're not trying to be repetitive her
 local opts = { noremap = true, silent = true }
 
--- Disable the spacebar's key's default behavior in Normal and Visual modes
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+-- Disable the spacebar's key's default behavior in Normal and Visual modes (Remove this if you change the leader key)
+-- vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Allow moving the cursor through wrapped lines with j, k
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -52,7 +52,7 @@ vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
 
--- Tabs
+-- Tab
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
@@ -63,7 +63,6 @@ vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
 
 -- Press jk fast to exit insert mode
 vim.keymap.set("i", "jk", "<ESC>", opts)
-vim.keymap.set("i", "kj", "<ESC>", opts)
 
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv", opts)
@@ -77,23 +76,18 @@ vim.keymap.set("v", "<A-k>", ":m .-2<CR>==", opts)
 vim.keymap.set("v", "p", '"_dP', opts)
 
 -- Replace word under cursor
-vim.keymap.set("n", "<leader>j", "*``cgn", opts)
+vim.keymap.set("n", "<leader>rw", "*``cgn", opts)
 
 -- Explicitly yank to system clipboard (highlighted and entire row)
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- Toggle diagnostics
+-- Toggle diagnostic
 local diagnostics_active = true
 
 vim.keymap.set("n", "<leader>do", function()
 	diagnostics_active = not diagnostics_active
-
-	if diagnostics_active then
-		vim.diagnostic.enable(true)
-	else
-		vim.diagnostic.enable(false)
-	end
+	vim.diagnostic.enable(diagnostics_active)
 end)
 
 -- Diagnostic keymaps
@@ -108,9 +102,5 @@ end, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
--- Save and load session
-vim.keymap.set("n", "<leader>ss", ":mksession! .session.vim<CR>", { noremap = true, silent = false })
-vim.keymap.set("n", "<leader>sl", ":source .session.vim<CR>", { noremap = true, silent = false })
-
 -- Auto Saving
-vim.api.nvim_set_keymap("n", "<leader>ta", ":ASToggle<CR>", {})
+vim.keymap.set("n", "<leader>ta", ":ASToggle<CR>", {})
