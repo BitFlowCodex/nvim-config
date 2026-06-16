@@ -27,4 +27,5 @@ require("lazy").setup({
 	require("plugins.autopairs"),
 	require("plugins.gitsigns"),
 	require("plugins.menuscreen"),
+	require("plugins.autosave"),
 })

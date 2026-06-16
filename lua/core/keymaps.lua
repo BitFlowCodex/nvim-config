@@ -1,8 +1,8 @@
--- Set leader key (Currently set to spacee)
+-- Set leader key (Currently set to space, change to what suits you)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Obviously, not trying to be repetitive here
+-- Obviously, we're not trying to be repetitive her
 local opts = { noremap = true, silent = true }
 
 -- Disable the spacebar's key's default behavior in Normal and Visual modes
@@ -35,19 +35,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 -- Find and center
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-
--- Resize with arrows
-vim.keymap.set("n", "<Up>", ":resize -2<CR>", opts)
-vim.keymap.set("n", "<Down>", ":resize +2<CR>", opts)
-vim.keymap.set("n", "<Left>", ":vertical resize -2<CR>", opts)
-vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>", opts)
-
--- Buffers
-vim.keymap.set("n", "<Tab>", ":bnext<CR>", opts)
-vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
-vim.keymap.set("n", "<C-i>", "<C-i>", opts) -- to restore jump forward
-vim.keymap.set("n", "<leader>x", ":Bdelete!<CR>", opts) -- close buffer
-vim.keymap.set("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
 
 -- Increment/decrement numbers
 vim.keymap.set("n", "<leader>+", "<C-a>", opts) -- increment
@@ -125,5 +112,5 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("n", "<leader>ss", ":mksession! .session.vim<CR>", { noremap = true, silent = false })
 vim.keymap.set("n", "<leader>sl", ":source .session.vim<CR>", { noremap = true, silent = false })
 
--- Save changes
-vim.keymap.set("n", "<leader>s", ":w<CR>", { noremap = true, silent = true })
+-- Auto Saving
+vim.api.nvim_set_keymap("n", "<leader>ta", ":ASToggle<CR>", {})
