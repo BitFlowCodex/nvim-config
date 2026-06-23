@@ -65,7 +65,7 @@ return {
 			yamlls = {},
 			clangd = {},
 			pyright = {},
-      omnisharp = {},
+			omnisharp = {},
 			ts_ls = {},
 			stylua = {},
 			lua_ls = {

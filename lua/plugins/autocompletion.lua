@@ -42,8 +42,17 @@ return { -- Autocompletion
 				"fallback",
 			},
 
+			["<Enter>"] = {
+				"accept",
+				"snippet_forward",
+				"fallback",
+			},
+
 			["<C-n>"] = { "select_next", "fallback" },
 			["<C-p>"] = { "select_prev", "fallback" },
+
+			["<Down>"] = { "select_next", "fallback" },
+			["<Up>"] = { "select_prev", "fallback" },
 
 			["<C-space>"] = { "show", "fallback" },
 
@@ -58,6 +67,14 @@ return { -- Autocompletion
 
 		completion = {
 			documentation = { auto_show = false, auto_show_delay_ms = 500 },
+			list = {
+				selection = {
+					preselect = true,
+				},
+			},
+			menu = {
+				auto_show = true,
+			},
 		},
 
 		sources = {

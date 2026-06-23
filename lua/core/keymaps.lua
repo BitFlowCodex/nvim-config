@@ -102,5 +102,5 @@ end, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
--- Auto Saving
+-- Toggle auto saving
 vim.keymap.set("n", "<leader>ta", ":ASToggle<CR>", {})
