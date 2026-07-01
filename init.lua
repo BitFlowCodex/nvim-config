@@ -28,4 +28,5 @@ require("lazy").setup({
 	require("plugins.gitsigns"),
 	require("plugins.menuscreen"),
 	require("plugins.autosave"),
+	require("plugins.presence"),
 })
