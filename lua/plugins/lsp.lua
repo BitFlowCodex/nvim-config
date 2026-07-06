@@ -66,6 +66,7 @@ return {
 			clangd = {},
 			pyright = {},
 			omnisharp = {},
+			gopls = {},
 			ts_ls = {},
 			stylua = {},
 			lua_ls = {
